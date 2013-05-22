@@ -2,7 +2,7 @@
 
 <div style="float: right">
   <%= current_user.firstname %>
-  <%= link_to 'Se déconnecter', destroy_user_session_path, :method => :delete %>
+  <%= link_to  'Se déconnecter', destroy_user_session_path, :method => :delete, :class => 'btn btn-danger' %>
 </div>
 <table>
   <tr>
