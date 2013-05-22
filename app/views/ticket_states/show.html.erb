@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @ticket_state.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_ticket_state_path(@ticket_state) %> |
+<%= link_to 'Back', ticket_states_path %>

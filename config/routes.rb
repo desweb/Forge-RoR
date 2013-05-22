@@ -1,4 +1,13 @@
 ForgeRor::Application.routes.draw do
+  resources :ticket_states
+
+
+  resources :tickets
+
+
+  resources :projects
+
+
   devise_for :users
 
   # The priority is based upon order of creation:
