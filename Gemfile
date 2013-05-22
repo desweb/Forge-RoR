@@ -41,3 +41,5 @@ gem 'jquery-rails'
 # Auth user
 gem 'devise'
 gem 'simple_form'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'

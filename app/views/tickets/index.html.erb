@@ -35,7 +35,13 @@
   </tr>
 <% end %>
 </table>
+<br />
+<div class="page_info">
+  <%= page_entries_info @tickets %>
+</div>
 
+
+<%= will_paginate @tickets, :renderer => BootstrapPagination::Rails %>
 <br />
 
 <%= link_to 'New Ticket', new_ticket_path %>
