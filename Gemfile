@@ -40,3 +40,4 @@ gem 'jquery-rails'
 
 # Auth user
 gem 'devise'
+gem 'simple_form'
