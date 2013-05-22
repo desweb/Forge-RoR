@@ -1,4 +1,5 @@
 class TicketStatesController < ApplicationController
+  before_filter :authenticate_user!
   # GET /ticket_states
   # GET /ticket_states.json
   def index

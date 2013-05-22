@@ -1,5 +1,9 @@
 <h1>Listing tickets</h1>
 
+<div style="float: right">
+  <%= current_user.firstname %>
+  <%= link_to 'Se déconnecter', destroy_user_session_path, :method => :delete %>
+</div>
 <table>
   <tr>
     <th>Title</th>
