@@ -133,10 +133,7 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3
-<<<<<<< HEAD
-=======
   twitter-bootstrap-rails
->>>>>>> b757768cfe55425e0e9dd0a74826aa8bba64afdc
   uglifier (>= 1.0.3)
   will_paginate
   will_paginate-bootstrap
