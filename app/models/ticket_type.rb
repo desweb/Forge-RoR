@@ -1,5 +1,4 @@
-class TicketState < ActiveRecord::Base
-	resourcify
+class TicketType < ActiveRecord::Base
   attr_accessible :name
   
   has_many :tickets

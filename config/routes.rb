@@ -1,4 +1,10 @@
 ForgeRor::Application.routes.draw do
+  resources :ticket_priorities
+
+
+  resources :ticket_types
+
+
   resources :ticket_states
 
 
