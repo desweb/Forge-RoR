@@ -34,6 +34,7 @@ class Ability
       can :manage, :all
     else
       can :read, :all
+        can :manage, Ticket
     end
   end
 end

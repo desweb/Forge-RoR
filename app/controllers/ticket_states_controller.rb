@@ -25,6 +25,8 @@ class TicketStatesController < ApplicationController
   # GET /ticket_states/new
   # GET /ticket_states/new.json
   def new
+    authorize! :manage, :all
+    
     @ticket_state = TicketState.new
 
     respond_to do |format|
