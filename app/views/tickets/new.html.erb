@@ -1,5 +1,6 @@
-<h1>New ticket</h1>
+<div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des tickets</button>'.html_safe, tickets_path %>
+  <h1>New ticket</h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', tickets_path %>
