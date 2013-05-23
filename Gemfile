@@ -40,5 +40,6 @@ gem 'jquery-rails'
 # Auth user
 gem 'devise'
 
-# twitter bootsrap
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'cancan'
+
+gem 'rolify'

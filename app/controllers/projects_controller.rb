@@ -25,6 +25,8 @@ class ProjectsController < ApplicationController
   # GET /projects/new
   # GET /projects/new.json
   def new
+    authorize! :manage, :all
+    
     @project = Project.new
 
     respond_to do |format|
