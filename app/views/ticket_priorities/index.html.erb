@@ -1,23 +1,28 @@
-<h1>Listing ticket_priorities</h1>
+<div class="page-header">
+    <h1>Listing ticket_priorities</h1>
+</div>
 
-<table>
+<div class="well">
+<table class="table table-striped">
   <tr>
     <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Actions</th>
   </tr>
 
 <% @ticket_priorities.each do |ticket_priority| %>
   <tr>
     <td><%= ticket_priority.name %></td>
-    <td><%= link_to 'Show', ticket_priority %></td>
-    <td><%= link_to 'Edit', edit_ticket_priority_path(ticket_priority) %></td>
-    <td><%= link_to 'Destroy', ticket_priority, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+        <%= link_to '<i class="icon-eye-open"></i>'.html_safe, ticket_priority, :rel => 'tooltip', :title => 'Voir la priorité' %>
+        <%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_ticket_priority_path(ticket_priority), :rel => 'tooltip', :title => 'Modifier la priorité' %>
+        <%= link_to '<i class="icon-remove"></i>'.html_safe, ticket_priority, method: :delete, data: { confirm: 'Are you sure?' }, :rel => 'tooltip', :title => 'Supprimer la priorité' %>
+    </td>
   </tr>
 <% end %>
 </table>
+</div>
 
+<%= will_paginate @ticket_priorities, :renderer => BootstrapPagination::Rails %>
 <br />
 
 <%= link_to 'New Ticket priority', new_ticket_priority_path %>

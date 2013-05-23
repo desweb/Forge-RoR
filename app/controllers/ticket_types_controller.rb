@@ -2,7 +2,7 @@ class TicketTypesController < ApplicationController
   # GET /ticket_types
   # GET /ticket_types.json
   def index
-    @ticket_types = TicketType.all
+    @ticket_types = TicketType.paginate(:page => params[:page], :per_page => 10)
 
     respond_to do |format|
       format.html # index.html.erb

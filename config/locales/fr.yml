@@ -1,0 +1,6 @@
+
+fr:
+  hello: "Hello world"
+  ticket:
+    edit:
+      title: "Editer votre ticket"
