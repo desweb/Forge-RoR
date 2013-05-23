@@ -1,10 +1,11 @@
-<h1>Listing tickets</h1>
+<div class="page-header">
+    <h1>Listing tickets</h1>
+</div>
 
 <div style="float: right">
-  <%= current_user.firstname %>
-  <%= link_to  'Se déconnecter', destroy_user_session_path, :method => :delete, :class => 'btn btn-danger' %>
+
 </div>
-<table>
+<table class="table table-striped">
   <tr>
     <th>Title</th>
     <th>Description</th>
@@ -29,9 +30,9 @@
     <td><%= ticket.percent %></td>
     <td><%= ticket.project_id %></td>
     <td><%= ticket.user_id %></td>
-    <td><%= link_to 'Show', ticket %></td>
-    <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-    <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '<i class="icon-eye-open"></i>'.html_safe, ticket %></td>
+    <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_ticket_path(ticket) %></td>
+    <td><%= link_to '<i class="icon-remove"></i>'.html_safe, ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
