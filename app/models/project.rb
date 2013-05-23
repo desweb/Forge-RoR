@@ -1,3 +1,4 @@
 class Project < ActiveRecord::Base
-  attr_accessible :description, :state, :title
+	resourcify
+	attr_accessible :description, :state, :title
 end
