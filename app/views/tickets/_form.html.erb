@@ -1,4 +1,4 @@
-<%= simple_form_for(@ticket) do |f| %>
+<%= simple_form_for(@ticket, :html => { :class => 'simple_form well form-horizontal' })  do |f| %>
     <%= f.input :title %>
     <%= f.input :description %>
     <%= f.association :ticket_state %>

@@ -1,45 +1,44 @@
+<div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Editer le ticket</button>'.html_safe, edit_ticket_path(@ticket) %>
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des tickets</button>'.html_safe, tickets_path %>
+  <h1>Ticket <em><%= @ticket.title %></em></h1>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @ticket.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @ticket.description %>
-</p>
-
-<p>
-  <b>Ticket states:</b>
-  <%= @ticket.ticket_state_id %>
-</p>
-
-<p>
-  <b>Type:</b>
-  <%= @ticket.ticket_type_id %>
-</p>
-
-<p>
-  <b>Priority:</b>
-  <%= @ticket.ticket_priority_id %>
-</p>
-
-<p>
-  <b>Percent:</b>
-  <%= @ticket.percent %>
-</p>
-
-<p>
-  <b>Project:</b>
-  <%= @ticket.project_id %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @ticket.user_id %>
-</p>
-
-
-<%= link_to 'Edit', edit_ticket_path(@ticket) %> |
-<%= link_to 'Back', tickets_path %>
+<div class="well">
+  <table class="table table-striped">
+    <tr>
+      <th width="20%">Project</th>
+      <td width="80%"><%= @ticket.project.title %></td>
+    </tr>
+    <tr>
+      <th width="20%">User</th>
+      <td width="80%"><%= @ticket.user.name %></td>
+    </tr>
+    <tr>
+      <th width="20%">State</th>
+      <td width="80%"><%= @ticket.ticket_state.name %></td>
+    </tr>
+    <tr>
+      <th width="20%">Type</th>
+      <td width="80%"><%= @ticket.ticket_type.name %></td>
+    </tr>
+    <tr>
+      <th width="20%">Priority</th>
+      <td width="80%"><%= @ticket.ticket_priority.name %></td>
+    </tr>
+    <tr>
+      <th width="20%">Percent</th>
+      <td width="80%">
+        <div class="progress">
+          <div class="bar" style="width: <%= @ticket.percent %>%;"></div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <th width="20%">Description</th>
+      <td width="80%"><%= @ticket.description %></td>
+    </tr>
+  </table>
+</div>
