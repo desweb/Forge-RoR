@@ -2,7 +2,7 @@
 
 <div style="float: right">
   <%= current_user.firstname %>
-  <%= link_to 'Se déconnecter', destroy_user_session_path, :method => :delete %>
+  <%= link_to  'Se déconnecter', destroy_user_session_path, :method => :delete, :class => 'btn btn-danger' %>
 </div>
 <table>
   <tr>
@@ -35,7 +35,13 @@
   </tr>
 <% end %>
 </table>
+<br />
+<div class="page_info">
+  <%= page_entries_info @tickets %>
+</div>
 
+
+<%= will_paginate @tickets, :renderer => BootstrapPagination::Rails %>
 <br />
 
 <%= link_to 'New Ticket', new_ticket_path %>
