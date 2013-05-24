@@ -9,17 +9,17 @@
       <th><%= I18n.t(:'project.global.title') %></th>
       <th class="hidden-phone"><%= I18n.t(:'project.global.description') %></th>
       <th><%= I18n.t(:'project.global.state') %></th>
-      <th colspan="3"><%= I18n.t(:'global.actions') %></th>
+      <th colspan="3" class="hidden-phone"><%= I18n.t(:'global.actions') %></th>
     </tr>
 
   <% @projects.each do |project| %>
     <tr>
-      <td><%= project.title %></td>
+      <td><%= link_to project.title, project, :rel => 'tooltip', :title => I18n.t(:'project.show.btn') %></td>
       <td class="hidden-phone"><%= project.description %></td>
-      <td><%= project.state %></td>
-      <td><%= link_to '<i class="icon-eye-open"></i>'.html_safe, project, :rel => 'tooltip', :title => I18n.t(:'project.show.btn') %></td>
-      <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_project_path(project), :rel => 'tooltip', :title => I18n.t(:'project.edit.btn') %></td>
-      <td><%= link_to '<i class="icon-remove"></i>'.html_safe, project, method: :delete, data: { confirm: I18n.t(:'global.confirm') }, :rel => 'tooltip', :title => I18n.t(:'project.delete.btn') %></td>
+      <td><%= project.state? ? image_tag('active.png'): image_tag('inactive.png'); %></td>
+      <td class="hidden-phone"><%= link_to '<i class="icon-eye-open"></i>'.html_safe, project, :rel => 'tooltip', :title => I18n.t(:'project.show.btn') %></td>
+      <td class="hidden-phone"><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_project_path(project), :rel => 'tooltip', :title => I18n.t(:'project.edit.btn') %></td>
+      <td class="hidden-phone"><%= link_to '<i class="icon-remove"></i>'.html_safe, project, method: :delete, data: { confirm: I18n.t(:'global.confirm') }, :rel => 'tooltip', :title => I18n.t(:'project.delete.btn') %></td>
     </tr>
   <% end %>
   </table>

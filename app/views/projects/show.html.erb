@@ -15,7 +15,7 @@
     </tr>
     <tr>
       <th width="20%"><%= I18n.t(:'project.global.state') %></th>
-      <td width="80%"><%= @project.state %></td>
+      <td width="80%"><%= @project.state? ? image_tag('active.png'): image_tag('inactive.png'); %></td>
     </tr>
     <tr>
       <th width="20%"><%= I18n.t(:'project.global.description') %></th>

@@ -8,28 +8,28 @@
     <tr>
       <th><%= I18n.t(:'ticket.global.title') %></th>
       <th class="hidden-phone"><%= I18n.t(:'ticket.global.description') %></th>
-      <th><%= I18n.t(:'ticket.global.state') %></th>
+      <th class="hidden-phone"><%= I18n.t(:'ticket.global.state') %></th>
       <th class="hidden-phone"><%= I18n.t(:'ticket.global.type') %></th>
-      <th><%= I18n.t(:'ticket.global.priority') %></th>
+      <th class="hidden-phone"><%= I18n.t(:'ticket.global.priority') %></th>
       <th class="hidden-phone"><%= I18n.t(:'ticket.global.percent') %></th>
       <th class="hidden-phone"><%= I18n.t(:'ticket.global.project') %></th>
       <th><%= I18n.t(:'ticket.global.user') %></th>
-      <th colspan="3"><%= I18n.t(:'global.actions') %></th>
+      <th colspan="3" class="hidden-phone"><%= I18n.t(:'global.actions') %></th>
     </tr>
 
   <% @tickets.each do |ticket| %>
     <tr>
-      <td><%= ticket.title %></td>
+      <td><%= link_to ticket.title, ticket, :rel => 'tooltip', :title => I18n.t(:'ticket.show.btn') %></td>
       <td class="hidden-phone"><%= ticket.description %></td>
-      <td><%= ticket.ticket_state.name %></td>
+      <td class="hidden-phone"><%= ticket.ticket_state.name %></td>
       <td class="hidden-phone"><%= ticket.ticket_type.name %></td>
-      <td><%= ticket.ticket_priority.name %></td>
+      <td class="hidden-phone"><%= ticket.ticket_priority.name %></td>
       <td class="hidden-phone"><%= ticket.percent %> %</td>
       <td class="hidden-phone"><%= ticket.project.title %></td>
       <td><%= ticket.user.firstname.first.capitalize %>. <%= ticket.user.lastname.capitalize %></td>
-      <td><%= link_to '<i class="icon-eye-open"></i>'.html_safe, ticket, :rel => 'tooltip', :title => I18n.t(:'ticket.show.btn') %></td>
-      <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_ticket_path(ticket), :rel => 'tooltip', :title => I18n.t(:'ticket.edit.btn') %></td>
-      <td><%= link_to '<i class="icon-remove"></i>'.html_safe, ticket, method: :delete, data: { confirm: I18n.t(:'global.confirm') }, :rel => 'tooltip', :title => I18n.t(:'ticket.delete.btn') %></td>
+      <td class="hidden-phone"><%= link_to '<i class="icon-eye-open"></i>'.html_safe, ticket, :rel => 'tooltip', :title => I18n.t(:'ticket.show.btn') %></td>
+      <td class="hidden-phone"><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_ticket_path(ticket), :rel => 'tooltip', :title => I18n.t(:'ticket.edit.btn') %></td>
+      <td class="hidden-phone"><%= link_to '<i class="icon-remove"></i>'.html_safe, ticket, method: :delete, data: { confirm: I18n.t(:'global.confirm') }, :rel => 'tooltip', :title => I18n.t(:'ticket.delete.btn') %></td>
     </tr>
   <% end %>
   </table>
