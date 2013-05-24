@@ -17,4 +17,14 @@ class Ticket < ActiveRecord::Base
 
   belongs_to :project
   belongs_to :user
+
+  def as_json(options={})
+    super.merge(
+        :project => project,
+        :user => user,
+        :ticket_priority => ticket_priority,
+        :ticket_state => ticket_state,
+        :ticket_type => ticket_type
+    )
+  end
 end

@@ -50,3 +50,5 @@ gem 'rolify'
 gem 'simple_form'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
+
+gem "angular-rails"
