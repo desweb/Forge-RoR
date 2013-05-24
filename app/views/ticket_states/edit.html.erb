@@ -1,6 +1,7 @@
-<h1>Editing ticket_state</h1>
+<div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Voir le statut</button>'.html_safe, @ticket_state %>
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des statuts</button>'.html_safe, ticket_states_path %>
+  <h1>Editing ticket state</h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @ticket_state %> |
-<%= link_to 'Back', ticket_states_path %>

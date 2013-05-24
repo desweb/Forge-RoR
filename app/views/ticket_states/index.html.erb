@@ -1,22 +1,21 @@
 <div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Ajouter un statut</button>'.html_safe, new_ticket_state_path %>
   <h1>Listing ticket states</h1>
 </div>
 
 <div class="well">
     <table class="table table-striped">
       <tr>
-        <th style="width: 50%">Name</th>
-        <th style="width: 50%">Actions</th>
+        <th width="50%">Name</th>
+        <th width="50%" colspan="3">Actions</th>
       </tr>
 
     <% @ticket_states.each do |ticket_state| %>
       <tr>
         <td><%= ticket_state.name %></td>
-        <td>
-            <%= link_to  '<i class="icon-eye-open"></i>'.html_safe, ticket_state, :rel => 'tooltip', :title => 'Voir le statu' %>
-            <%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_ticket_state_path(ticket_state), :rel => 'tooltip', :title => 'Modifier le statu' %>
-            <%= link_to '<i class="icon-remove"></i>'.html_safe, ticket_state, :title => 'Supprimer le statu' , method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
+        <td><%= link_to  '<i class="icon-eye-open"></i>'.html_safe, ticket_state, :rel => 'tooltip', :title => 'Voir le statu' %></td>
+        <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_ticket_state_path(ticket_state), :rel => 'tooltip', :title => 'Modifier le statu' %></td>
+          <td><%= link_to '<i class="icon-remove"></i>'.html_safe, ticket_state, :title => 'Supprimer le statu' , method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     </table>
@@ -24,7 +23,3 @@
 <br />
 
 <%= will_paginate @ticket_states, :renderer => BootstrapPagination::Rails %>
-<br />
-
-
-<%= link_to 'New Ticket state', new_ticket_state_path %>
