@@ -19,7 +19,7 @@
         </tr>
 
         <tr ng-repeat="ticket in displayed_tickets | filter:query | orderBy:orderProp">
-          <td><a href='tickets/{{ticket.id}}' rel="tooltip" title="<%= I18n.t(:'ticket.show.btn') %>">>{{ticket.title}}</a></td>
+          <td><a href='tickets/{{ticket.id}}' rel="tooltip" title="<%= I18n.t(:'ticket.show.btn') %>">{{ticket.title}}</a></td>
           <td class="hidden-phone">{{ticket.description}}</td>
           <td class="hidden-phone">{{ticket.ticket_state.name}}</td>
           <td class="hidden-phone">{{ticket.ticket_type.name}}</td>
