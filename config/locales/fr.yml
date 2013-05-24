@@ -14,6 +14,7 @@ fr:
     page_gap: ! '&hellip;'
     previous_label: ! '&#8592; Précédent'
   simple_form:
+    submit: Envoyer
     labels:
       ticket:
         title: Titre
@@ -24,8 +25,16 @@ fr:
         percent: Pourcentage
         project: Projet
         user: Utilisateur
-        new:
-          
+      project:
+        title: Titre
+        description: Description
+        state: Statut
+      ticket_state:
+        name: Nom
+      ticket_priority:
+        name: Nom
+      ticket_type:
+        name: Nom
   global:
     confirm: Êtes-vous sur ?
     actions: Actions
