@@ -1,7 +1,7 @@
 <div class="page-header">
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Voir le statut</button>'.html_safe, @ticket_state %>
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des statuts</button>'.html_safe, ticket_states_path %>
-  <h1>Editing ticket state</h1>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_state.show.btn')}</button>".html_safe, @ticket_state %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_state.index.btn')}</button>".html_safe, ticket_states_path %>
+  <h1><%= I18n.t(:'ticket_state.edit.title') %> <em><%= @ticket_state.name %></em></h1>
 </div>
 
 <%= render 'form' %>

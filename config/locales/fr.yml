@@ -1,6 +1,106 @@
-
 fr:
-  hello: "Hello world"
-  ticket:
+  global:
+    confirm: Êtes-vous sur ?
+    actions: Actions
+  nav:
+    project: Projets
+    ticket: Tickets
+    ticket_state: Statuts
+    ticket_priority: Priorités
+    ticket_type: Types
+    profile: Profil
+    disconnect: Se déconnecter
+  project:
+    global:
+      title: Titre
+      description: Description
+      state: Statut
+    index:
+      title: Liste des projets
+      btn: Voir la liste des projets
+    new:
+      title: Nouveau projet
+      btn: Ajouter un projet
     edit:
-      title: "Editer votre ticket"
+      title: Editer le projet
+      btn: Editer le projet
+    show:
+      title: Projet
+      btn: Voir le projet
+    delete:
+      btn: Supprimer le projet
+  ticket:
+    global:
+      title: Titre
+      description: Description
+      state: Statut
+      type: Type
+      priority: Priorité
+      percent: Pourcentage
+      project: Projet
+      user: Utilisateur
+    index:
+      title: Liste des tickets
+      btn: Voir la liste des tickets
+    new:
+      title: Nouveau ticket
+      btn: Ajouter un ticket
+    edit:
+      title: Editer le ticket
+      btn: Editer le ticket
+    show:
+      title: Ticket
+      btn: Voir le ticket
+    delete:
+      btn: Supprimer le ticket
+  ticket_type:
+    global:
+      name: Nom
+    index:
+      title: Liste des types
+      btn: Voir la liste des types
+    new:
+      title: Nouveau type
+      btn: Ajouter un type
+    edit:
+      title: Editer le type
+      btn: Editer le type
+    show:
+      title: Type
+      btn: Voir le type
+    delete:
+      btn: Supprimer le type
+  ticket_state:
+    global:
+      name: Nom
+    index:
+      title: Liste des statuts
+      btn: Voir la liste des statuts
+    new:
+      title: Nouveau statut
+      btn: Ajouter un statut
+    edit:
+      title: Editer le statut
+      btn: Editer le statut
+    show:
+      title: Statut
+      btn: Voir le statut
+    delete:
+      btn: Supprimer le statut
+  ticket_priority:
+    global:
+      name: Nom
+    index:
+      title: Liste des priorités
+      btn: Voir la liste des priorités
+    new:
+      title: Nouvelle priorité
+      btn: Ajouter une priorité
+    edit:
+      title: Editer la priorité
+      btn: Editer la priorité
+    show:
+      title: Priorité
+      btn: Voir la priorité
+    delete:
+      btn: Supprimer la priorité

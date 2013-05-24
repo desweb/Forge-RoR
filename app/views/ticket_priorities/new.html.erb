@@ -1,6 +1,6 @@
 <div class="page-header">
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des priorités</button>'.html_safe, ticket_priorities_path %>
-  <h1>New ticket priority</h1>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_priority.index.btn')}</button>".html_safe, ticket_priorities_path %>
+  <h1><%= I18n.t(:'ticket_priority.new.title') %></h1>
 </div>
 
 <%= render 'form' %>

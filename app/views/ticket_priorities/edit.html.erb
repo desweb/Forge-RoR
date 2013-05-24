@@ -1,7 +1,7 @@
 <div class="page-header">
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Voir la priorité</button>'.html_safe, @ticket_priority %>
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des priorités</button>'.html_safe, ticket_priorities_path %>
-  <h1>Editing ticket priority</h1>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_priority.show.btn')}</button>".html_safe, @ticket_priority %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_priority.index.btn')}</button>".html_safe, ticket_priorities_path %>
+  <h1><%= I18n.t(:'ticket_priority.edit.title') %> <em><%= @ticket_priority.name %></em></h1>
 </div>
 
 <%= render 'form' %>

@@ -1,7 +1,7 @@
 <div class="page-header">
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Editer la priorité</button>'.html_safe, edit_ticket_priority_path(@ticket_priority) %>
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des priorités</button>'.html_safe, ticket_priorities_path %>
-  <h1>Priorité <em><%= @ticket_priority.name %></em></h1>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_priority.edit.btn')}</button>".html_safe, edit_ticket_priority_path(@ticket_priority) %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_priority.index.btn')}</button>".html_safe, ticket_priorities_path %>
+  <h1><%= I18n.t(:'ticket_priority.show.title') %> <em><%= @ticket_priority.name %></em></h1>
 </div>
 
 <p id="notice"><%= notice %></p>
@@ -9,7 +9,7 @@
 <div class="well">
   <table class="table table-striped">
     <tr>
-      <th width="20%">Name</th>
+      <th width="20%"><%= I18n.t(:'ticket_priority.global.name') %></th>
       <td width="80%"><%= @ticket_priority.name %></td>
     </tr>
   </table>

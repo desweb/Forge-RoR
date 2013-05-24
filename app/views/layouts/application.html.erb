@@ -51,26 +51,26 @@
           <a class="brand" href="#"><i class="icon-home"></i> ForgeRor</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to '<i class="icon-folder-open"></i> Projects'.html_safe, :projects  %></li>
-              <li><%= link_to '<i class="icon-tasks"></i> Tickets'.html_safe, :tickets  %></li>
-              <li><%= link_to '<i class="icon-list"></i> Ticket States'.html_safe, :ticket_states  %></li>
-              <li><%= link_to '<i class="icon-list"></i> Ticket Priorities'.html_safe, :ticket_priorities  %></li>
-              <li><%= link_to '<i class="icon-list"></i> Ticket Types'.html_safe, :ticket_types  %></li>
+              <li><%= link_to "<i class=\"icon-folder-open\"></i> #{I18n.t(:'nav.project')}".html_safe, :projects  %></li>
+              <li><%= link_to "<i class=\"icon-tasks\"></i> #{I18n.t(:'nav.ticket')}".html_safe, :tickets  %></li>
+              <li><%= link_to "<i class=\"icon-list\"></i> #{I18n.t(:'nav.ticket_state')}".html_safe, :ticket_states  %></li>
+              <li><%= link_to "<i class=\"icon-list\"></i> #{I18n.t(:'nav.ticket_priority')}".html_safe, :ticket_priorities  %></li>
+              <li><%= link_to "<i class=\"icon-list\"></i> #{I18n.t(:'nav.ticket_type')}".html_safe, :ticket_types  %></li>
             </ul>
 
             <ul class="nav pull-right" id="main-menu-right">
               <li class="dropdown" id="preview-menu">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">i18n <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="#">FR</a></li>
-                  <li><a href="#">EN</a></li>
+                  <li><a href="/fr">FR</a></li>
+                  <li><a href="/en">EN</a></li>
                 </ul>
               </li>
               <li class="dropdown" id="preview-menu">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-user"></i> <%= current_user.firstname.capitalize %> <%= current_user.lastname.capitalize %> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><%= link_to '<i class="icon-cog"></i> Profil'.html_safe, edit_user_registration_path %></li>
-                  <li><%= link_to '<i class="icon-off"></i> Se déconnecter'.html_safe, destroy_user_session_path, :method => :delete %></li>
+                  <li><%= link_to "<i class=\"icon-cog\"></i> #{I18n.t(:'nav.profile')}".html_safe, edit_user_registration_path %></li>
+                  <li><%= link_to "<i class=\"icon-off\"></i> #{I18n.t(:'nav.disconnect')}".html_safe, destroy_user_session_path, :method => :delete %></li>
                 </ul>
               </li>
             </ul>

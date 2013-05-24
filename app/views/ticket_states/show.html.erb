@@ -1,7 +1,7 @@
 <div class="page-header">
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Editer le statut</button>'.html_safe, edit_ticket_state_path(@ticket_state) %>
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des statut</button>'.html_safe, ticket_states_path %>
-  <h1>Ticket <em><%= @ticket_state.name %></em></h1>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_state.edit.btn')}</button>".html_safe, edit_ticket_state_path(@ticket_state) %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_state.index.btn')}</button>".html_safe, ticket_states_path %>
+  <h1><%= I18n.t(:'ticket_state.show.title') %> <em><%= @ticket_state.name %></em></h1>
 </div>
 
 <p id="notice"><%= notice %></p>
@@ -9,7 +9,7 @@
 <div class="well">
   <table class="table table-striped">
     <tr>
-      <th width="20%">Name</th>
+      <th width="20%"><%= I18n.t(:'ticket_state.global.name') %></th>
       <td width="80%"><%= @ticket_state.name %></td>
     </tr>
   </table>
