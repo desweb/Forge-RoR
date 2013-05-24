@@ -54,6 +54,12 @@ fr:
     ticket_type: Types
     profile: Profil
     disconnect: Se déconnecter
+  sign_in:
+    title: Connexion
+  sign_up:
+    title: Inscription
+  password_lost:
+    title: Mot de pass perdu
   project:
     global:
       title: Titre
