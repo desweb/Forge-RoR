@@ -1,27 +1,30 @@
-<h1>Listing projects</h1>
+<div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Ajouter un projet</button>'.html_safe, new_project_path %>
+  <h1>Listing projects</h1>
+</div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>State</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="well">
+  <table class="table table-striped">
+    <tr>
+      <th>Title</th>
+      <th class="hidden-phone">Description</th>
+      <th>States</th>
+      <th colspan="3">Actions</th>
+    </tr>
 
-<% @projects.each do |project| %>
-  <tr>
-    <td><%= project.title %></td>
-    <td><%= project.description %></td>
-    <td><%= project.state %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <% @projects.each do |project| %>
+    <tr>
+      <td><%= project.title %></td>
+      <td class="hidden-phone"><%= project.description %></td>
+      <td><%= project.state %></td>
+      <td><%= link_to '<i class="icon-eye-open"></i>'.html_safe, project, :rel => 'tooltip', :title => 'Voir le projet' %></td>
+      <td><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_project_path(project), :rel => 'tooltip', :title => 'Editer le projet' %></td>
+      <td><%= link_to '<i class="icon-remove"></i>'.html_safe, project, method: :delete, data: { confirm: 'Are you sure?' }, :rel => 'tooltip', :title => 'Supprimer le projet' %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 
 <br />
 
-<%= link_to 'New Project', new_project_path %>
+<%= will_paginate @projects, :renderer => BootstrapPagination::Rails %>

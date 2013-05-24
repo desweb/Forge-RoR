@@ -1,20 +1,25 @@
+<div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Editer le projet</button>'.html_safe, edit_project_path(@project) %>
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des projets</button>'.html_safe, projects_path %>
+  <h1>Projet <em><%= @project.title %></em></h1>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @project.title %>
-</p>
+<div class="well">
+  <table class="table table-striped">
+    <tr>
+      <th width="20%">Project</th>
+      <td width="80%"><%= @project.title %></td>
+    </tr>
+    <tr>
+      <th width="20%">State</th>
+      <td width="80%"><%= @projectname %></td>
+    </tr>
+    <tr>
+      <th width="20%">Description</th>
+      <td width="80%"><%= @project.description %></td>
+    </tr>
+  </table>
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @project.state %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>

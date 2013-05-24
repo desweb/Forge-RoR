@@ -1,6 +1,7 @@
-<h1>Editing project</h1>
+<div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Voir le projet</button>'.html_safe, @project %>
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des projets</button>'.html_safe, projects_path %>
+  <h1>Editing project</h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @project %> |
-<%= link_to 'Back', projects_path %>
