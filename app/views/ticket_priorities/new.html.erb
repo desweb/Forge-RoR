@@ -1,5 +1,6 @@
-<h1>New ticket_priority</h1>
+<div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des priorités</button>'.html_safe, ticket_priorities_path %>
+  <h1>New ticket priority</h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', ticket_priorities_path %>

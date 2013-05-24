@@ -1,6 +1,7 @@
-<h1>Editing ticket_priority</h1>
+<div class="page-header">
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Voir la priorité</button>'.html_safe, @ticket_priority %>
+  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des priorités</button>'.html_safe, ticket_priorities_path %>
+  <h1>Editing ticket priority</h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @ticket_priority %> |
-<%= link_to 'Back', ticket_priorities_path %>
