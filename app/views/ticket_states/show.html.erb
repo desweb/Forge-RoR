@@ -1,6 +1,7 @@
 <div class="page-header">
   <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_state.edit.btn')}</button>".html_safe, edit_ticket_state_path(@ticket_state) %>
-  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_state.index.btn')}</button>".html_safe, ticket_states_path %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_state.index.btn')}</button>".html_safe, ticket_states_path %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-danger\">#{I18n.t(:'ticket_state.delete.btn')}</button>".html_safe, @ticket_state, method: :delete, data: { confirm: I18n.t(:'global.confirm') } %>
   <h1><%= I18n.t(:'ticket_state.show.title') %> <em><%= @ticket_state.name %></em></h1>
 </div>
 

@@ -1,6 +1,7 @@
 <div class="page-header">
   <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'project.show.btn')}</button>".html_safe, @project %>
-  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'project.index.btn')}</button>".html_safe, projects_path %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'project.index.btn')}</button>".html_safe, projects_path %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-danger\">#{I18n.t(:'project.delete.btn')}</button>".html_safe, @project, method: :delete, data: { confirm: I18n.t(:'global.confirm') } %>
   <h1><%= I18n.t(:'project.edit.title') %> <em><%= @project.title %></em></h1>
 </div>
 
