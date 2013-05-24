@@ -24,7 +24,11 @@
       <td class="hidden-phone"><%= ticket.ticket_state.name %></td>
       <td class="hidden-phone"><%= ticket.ticket_type.name %></td>
       <td class="hidden-phone"><%= ticket.ticket_priority.name %></td>
-      <td class="hidden-phone"><%= ticket.percent %> %</td>
+      <td class="hidden-phone">
+        <div class="progress">
+          <div class="bar" style="width: <%= ticket.percent %>%;"></div>
+        </div>
+      </td>
       <td class="hidden-phone"><%= ticket.project.title %></td>
       <td><%= ticket.user.firstname.first.capitalize %>. <%= ticket.user.lastname.capitalize %></td>
       <td class="hidden-phone"><%= link_to '<i class="icon-eye-open"></i>'.html_safe, ticket, :rel => 'tooltip', :title => I18n.t(:'ticket.show.btn') %></td>

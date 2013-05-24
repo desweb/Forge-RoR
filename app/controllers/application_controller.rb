@@ -7,8 +7,10 @@ class ApplicationController < ActionController::Base
 	  redirect_to root_url
   end
 
+  private
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+    Rails.application.routes.default_url_options[:locale] = I18n.locale 
   end
   
   def default_url_options(options={})
