@@ -1,5 +1,6 @@
-<h1>New ticket_type</h1>
+<div class="page-header">
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_type.index.btn')}</button>".html_safe, ticket_types_path %>
+  <h1><%= I18n.t(:'ticket_type.new.title') %></h1>
+</div>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', ticket_types_path %>

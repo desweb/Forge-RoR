@@ -1,20 +1,25 @@
+<div class="page-header">
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'project.edit.btn')}</button>".html_safe, edit_project_path(@project) %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'project.index.btn')}</button>".html_safe, projects_path %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-danger\">#{I18n.t(:'project.delete.btn')}</button>".html_safe, @project, method: :delete, data: { confirm: I18n.t(:'global.confirm') } %>
+  <h1>Projet <em><%= @project.title %></em></h1>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @project.title %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @project.description %>
-</p>
-
-<p>
-  <b>State:</b>
-  <%= @project.state %>
-</p>
-
-
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<div class="well">
+  <table class="table table-striped">
+    <tr>
+      <th width="20%"><%= I18n.t(:'project.global.title') %></th>
+      <td width="80%"><%= @project.title %></td>
+    </tr>
+    <tr>
+      <th width="20%"><%= I18n.t(:'project.global.state') %></th>
+      <td width="80%"><%= @project.state? ? image_tag('active.png'): image_tag('inactive.png'); %></td>
+    </tr>
+    <tr>
+      <th width="20%"><%= I18n.t(:'project.global.description') %></th>
+      <td width="80%"><%= @project.description %></td>
+    </tr>
+  </table>
+</div>

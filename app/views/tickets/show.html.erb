@@ -1,7 +1,8 @@
 <div class="page-header">
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Editer le ticket</button>'.html_safe, edit_ticket_path(@ticket) %>
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des tickets</button>'.html_safe, tickets_path %>
-  <h1>Ticket <em><%= @ticket.title %></em></h1>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket.edit.btn')}</button>".html_safe, edit_ticket_path(@ticket) %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket.index.btn')}</button>".html_safe, tickets_path %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-danger\">#{I18n.t(:'ticket.delete.btn')}</button>".html_safe, @ticket, method: :delete, data: { confirm: I18n.t(:'global.confirm') } %>
+  <h1><%= I18n.t(:'ticket.show.title') %> <em><%= @ticket.title %></em></h1>
 </div>
 
 <p id="notice"><%= notice %></p>
@@ -9,27 +10,27 @@
 <div class="well">
   <table class="table table-striped">
     <tr>
-      <th width="20%">Project</th>
+      <th width="20%"><%= I18n.t(:'ticket.global.project') %></th>
       <td width="80%"><%= @ticket.project.title %></td>
     </tr>
     <tr>
-      <th width="20%">User</th>
+      <th width="20%"><%= I18n.t(:'ticket.global.user') %></th>
       <td width="80%"><%= @ticket.user.name %></td>
     </tr>
     <tr>
-      <th width="20%">State</th>
+      <th width="20%"><%= I18n.t(:'ticket.global.state') %></th>
       <td width="80%"><%= @ticket.ticket_state.name %></td>
     </tr>
     <tr>
-      <th width="20%">Type</th>
+      <th width="20%"><%= I18n.t(:'ticket.global.type') %></th>
       <td width="80%"><%= @ticket.ticket_type.name %></td>
     </tr>
     <tr>
-      <th width="20%">Priority</th>
+      <th width="20%"><%= I18n.t(:'ticket.global.priority') %></th>
       <td width="80%"><%= @ticket.ticket_priority.name %></td>
     </tr>
     <tr>
-      <th width="20%">Percent</th>
+      <th width="20%"><%= I18n.t(:'ticket.global.percent') %></th>
       <td width="80%">
         <div class="progress">
           <div class="bar" style="width: <%= @ticket.percent %>%;"></div>
@@ -37,7 +38,7 @@
       </td>
     </tr>
     <tr>
-      <th width="20%">Description</th>
+      <th width="20%"><%= I18n.t(:'ticket.global.description') %></th>
       <td width="80%"><%= @ticket.description %></td>
     </tr>
   </table>

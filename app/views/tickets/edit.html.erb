@@ -1,7 +1,8 @@
 <div class="page-header">
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Voir le ticket</button>'.html_safe, @ticket %>
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des tickets</button>'.html_safe, tickets_path %>
-  <h1><%= I18n.t(:'ticket.edit.title')%></h1>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket.show.btn')}</button>".html_safe, @ticket %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket.index.btn')}</button>".html_safe, tickets_path %>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-danger\">#{I18n.t(:'ticket.delete.btn')}</button>".html_safe, @ticket, method: :delete, data: { confirm: I18n.t(:'global.confirm') } %>
+  <h1><%= I18n.t(:'ticket.edit.title') %> <em><%= @ticket.title %></em></h1>
 </div>
 
 <%= render 'form' %>

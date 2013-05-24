@@ -1,35 +1,39 @@
 <div class="page-header">
-  <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Ajouter un ticket</button>'.html_safe, new_ticket_path %>
-  <h1>Listing tickets</h1>
+  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket.new.btn')}</button>".html_safe, new_ticket_path %>
+  <h1><%= I18n.t(:'ticket.index.title') %></h1>
 </div>
 
 <div ng-controller="TicketListCtrl">
   <div class="well">
       <table class="table table-striped">
         <tr>
-          <th>Title</th>
-          <th class="hidden-phone">Description</th>
-          <th>Ticket states</th>
-          <th class="hidden-phone">Type</th>
-          <th>Priority</th>
-          <th class="hidden-phone">Percent</th>
-          <th class="hidden-phone">Project</th>
-          <th>User</th>
-          <th colspan="3">Actions</th>
+          <th><%= I18n.t(:'ticket.global.title') %></th>
+          <th class="hidden-phone"><%= I18n.t(:'ticket.global.description') %></th>
+          <th class="hidden-phone"><%= I18n.t(:'ticket.global.state') %></th>
+          <th class="hidden-phone"><%= I18n.t(:'ticket.global.type') %></th>
+          <th class="hidden-phone"><%= I18n.t(:'ticket.global.priority') %></th>
+          <th class="hidden-phone"><%= I18n.t(:'ticket.global.percent') %></th>
+          <th class="hidden-phone"><%= I18n.t(:'ticket.global.project') %></th>
+          <th><%= I18n.t(:'ticket.global.user') %></th>
+          <th colspan="3" class="hidden-phone"><%= I18n.t(:'global.actions') %></th>
         </tr>
 
         <tr ng-repeat="ticket in displayed_tickets | filter:query | orderBy:orderProp">
-          <td>{{ticket.title}}</td>
+          <td><a href='tickets/{{ticket.id}}' rel="tooltip" title="<%= I18n.t(:'ticket.show.btn') %>">>{{ticket.title}}</a></td>
           <td class="hidden-phone">{{ticket.description}}</td>
-          <td>{{ticket.ticket_state.name}}</td>
+          <td class="hidden-phone">{{ticket.ticket_state.name}}</td>
           <td class="hidden-phone">{{ticket.ticket_type.name}}</td>
-          <td>{{ticket.ticket_priority.name}}</td>
-          <td class="hidden-phone">{{ticket.percent}} %</td>
+          <td class="hidden-phone">{{ticket.ticket_priority.name}}</td>
+          <td class="hidden-phone">
+            <div class="progress">
+              <div class="bar" style="width: {{ticket.percent}}%;"></div>
+            </div>
+          </td>
           <td class="hidden-phone">{{ticket.project.title}}</td>
           <td>{{display_user(ticket.user.firstname,ticket.user.lastname)}}</td>
-          <td><a href='tickets/{{ticket.id}}' rel="tooltip" title="Voir le ticket"><i class="icon-eye-open"></i></a></td>
-          <td><a href='tickets/{{ticket.id}}/edit' rel="tooltip" title="Editer le ticket"><i class="icon-pencil"></i></a></td>
-          <td><a href='tickets/{{ticket.id}}' rel="tooltip" title="Supprimer le ticket" data-method="delete"><i class="icon-remove"></i></a></td>
+          <td class="hidden-phone"><a href='tickets/{{ticket.id}}' rel="tooltip" title="<%= I18n.t(:'ticket.show.btn') %>"><i class="icon-eye-open"></i></a></td>
+          <td class="hidden-phone"><a href='tickets/{{ticket.id}}/edit' rel="tooltip" title="<%= I18n.t(:'ticket.edit.btn') %>"><i class="icon-pencil"></i></a></td>
+          <td class="hidden-phone"><a href='tickets/{{ticket.id}}' rel="tooltip" title="<%= I18n.t(:'ticket.delete.btn') %>" data-method="delete" data-confirm="<%= I18n.t(:'global.confirm') %>"><i class="icon-remove"></i></a></td>
         </tr>
       </table>
   </div>
