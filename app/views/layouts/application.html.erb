@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= locale %>">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
@@ -60,10 +60,10 @@
 
             <ul class="nav pull-right" id="main-menu-right">
               <li class="dropdown" id="preview-menu">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">i18n <b class="caret"></b></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= I18n.t :'global.language' %> <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="/fr">FR</a></li>
-                  <li><a href="/en">EN</a></li>
+                  <li><a href="/fr"><%= image_tag 'fr.jpg', :width => '20px', :height => '10px' %></a></li>
+                  <li><a href="/en"><%= image_tag 'en.jpg', :width => '20px', :height => '10px' %></a></li>
                 </ul>
               </li>
               <li class="dropdown" id="preview-menu">

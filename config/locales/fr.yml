@@ -2,6 +2,7 @@ fr:
   global:
     confirm: Êtes-vous sur ?
     actions: Actions
+    language: Langue
   nav:
     project: Projets
     ticket: Tickets
