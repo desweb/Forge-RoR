@@ -37,6 +37,13 @@ en:
         name: Name
       ticket_type:
         name: Name
+      user:
+        email: Email
+        password: Password
+        password_confirmation: Password confirmation
+        current_password: Current password
+        firstname: Firstname
+        lastname: Lastname
   global:
     confirm: Are you sur ?
     actions: Actions

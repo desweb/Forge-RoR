@@ -35,6 +35,13 @@ fr:
         name: Nom
       ticket_type:
         name: Nom
+      user:
+        email: Email
+        password: Mot de passe
+        password_confirmation: Confirmation
+        current_password: Mot de passe courrant
+        firstname: Prénom
+        lastname: Nom
   global:
     confirm: Êtes-vous sur ?
     actions: Actions
