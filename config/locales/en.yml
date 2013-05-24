@@ -25,7 +25,7 @@ en:
         ticket_type: Type
         ticket_priority: Priority
         percent: Percent
-        project: Projest
+        project: Project
         user: User
       project:
         title: Title
