@@ -49,6 +49,12 @@ en:
     ticket_type: Types
     profile: Profile
     disconnect: Disconnect
+  sign_in:
+    title: Sign in
+  sign_up:
+    title: Sign up
+  password_lost:
+    title: Password lost
   project:
     global:
       title: Title
