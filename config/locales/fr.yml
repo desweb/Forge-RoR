@@ -13,6 +13,19 @@ fr:
         other: ! '%{count} %{model} affiché(e)s'
     page_gap: ! '&hellip;'
     previous_label: ! '&#8592; Précédent'
+  simple_form:
+    labels:
+      ticket:
+        title: Titre
+        description: Description
+        ticket_state: Statut
+        ticket_type: Type
+        ticket_priority: Priorité
+        percent: Pourcentage
+        project: Projet
+        user: Utilisateur
+        new:
+          
   global:
     confirm: Êtes-vous sur ?
     actions: Actions
