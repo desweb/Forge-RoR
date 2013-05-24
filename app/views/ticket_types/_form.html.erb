@@ -1,4 +1,4 @@
 <%= simple_form_for(@ticket_type, :html => { :class => 'simple_form well form-horizontal' })  do |f| %>
     <%= f.input :name %>
-    <%= f.button :submit %>
+    <%= f.button :submit, :value => I18n.t(:'simple_form.submit') %>
 <% end %>

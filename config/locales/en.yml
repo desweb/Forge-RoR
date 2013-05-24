@@ -15,6 +15,28 @@ en:
         zero: No %{model} found
     page_gap: ! '&hellip;'
     previous_label: ! '&#8592; Previous'
+  simple_form:
+    submit: Submit
+    labels:
+      ticket:
+        title: Title
+        description: Description
+        ticket_state: Status
+        ticket_type: Type
+        ticket_priority: Priority
+        percent: Percent
+        project: Projest
+        user: User
+      project:
+        title: Title
+        description: Description
+        state: Status
+      ticket_state:
+        name: Name
+      ticket_priority:
+        name: Name
+      ticket_type:
+        name: Name
   global:
     confirm: Are you sur ?
     actions: Actions
