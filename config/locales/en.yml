@@ -60,6 +60,9 @@ en:
     title: Sign in
   sign_up:
     title: Sign up
+  profile:
+    cancel_account: Cancel my account
+    unhappy: Unhappy ?
   password_lost:
     title: Password lost
   project:

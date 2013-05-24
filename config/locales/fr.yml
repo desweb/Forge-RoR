@@ -58,6 +58,9 @@ fr:
     title: Connexion
   sign_up:
     title: Inscription
+  profile:
+    cancel_account: Supprimer mon compte
+    unhappy: Pas content ?
   password_lost:
     title: Mot de pass perdu
   project:

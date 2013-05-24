@@ -19,6 +19,7 @@ function TicketListCtrl($scope, $http) {
 
  $scope.display_user = function(firstname, lastname)
  {
-     return firstname.substring(0,1).toUpperCase()+'. '+lastname.substring(0,1).toUpperCase()+lastname.substring(1);
+     if(firstname != null && lastname != null)
+        return firstname.substring(0,1).toUpperCase()+'. '+lastname.substring(0,1).toUpperCase()+lastname.substring(1);
  }
 }
