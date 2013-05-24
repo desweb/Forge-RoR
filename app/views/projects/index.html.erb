@@ -1,5 +1,7 @@
 <div class="page-header">
-  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'project.new.btn')}</button>".html_safe, new_project_path %>
+  <% if can? :manage, :all %>
+    <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'project.new.btn')}</button>".html_safe, new_project_path %>
+  <% end %>
   <h1><%= I18n.t(:'project.index.title') %></h1>
 </div>
 
@@ -18,8 +20,8 @@
       <td class="hidden-phone"><%= project.description %></td>
       <td><%= project.state? ? image_tag('active.png'): image_tag('inactive.png'); %></td>
       <td class="hidden-phone"><%= link_to '<i class="icon-eye-open"></i>'.html_safe, project, :rel => 'tooltip', :title => I18n.t(:'project.show.btn') %></td>
-      <td class="hidden-phone"><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_project_path(project), :rel => 'tooltip', :title => I18n.t(:'project.edit.btn') %></td>
-      <td class="hidden-phone"><%= link_to '<i class="icon-remove"></i>'.html_safe, project, method: :delete, data: { confirm: I18n.t(:'global.confirm') }, :rel => 'tooltip', :title => I18n.t(:'project.delete.btn') %></td>
+      <td class="hidden-phone"><% if can? :manage, :all %><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_project_path(project), :rel => 'tooltip', :title => I18n.t(:'project.edit.btn') %><% end %></td>
+      <td class="hidden-phone"><% if can? :manage, :all %><%= link_to '<i class="icon-remove"></i>'.html_safe, project, method: :delete, data: { confirm: I18n.t(:'global.confirm') }, :rel => 'tooltip', :title => I18n.t(:'project.delete.btn') %><% end %></td>
     </tr>
   <% end %>
   </table>
