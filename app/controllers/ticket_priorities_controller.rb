@@ -2,7 +2,7 @@ class TicketPrioritiesController < ApplicationController
   # GET /ticket_priorities
   # GET /ticket_priorities.json
   def index
-    @ticket_priorities = TicketPriority.paginate(:page => params[:page], :per_page => 10)
+    @ticket_priorities = TicketPriority.all
 
     respond_to do |format|
       format.html # index.html.erb

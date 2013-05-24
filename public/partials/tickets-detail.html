@@ -1,0 +1,7 @@
+<div class="page-header">
+    <%= link_to '<button class="nav nav-pills pull-right btn btn-primary" style="margin-left:10px;">Voir le ticket</button>'.html_safe, @ticket %>
+    <%= link_to '<button class="nav nav-pills pull-right btn btn-primary">Liste des tickets</button>'.html_safe, tickets_path %>
+    <h1><%= I18n.t(:'ticket.edit.title')%></h1>
+</div>
+
+<%= render 'form' %>

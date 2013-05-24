@@ -12,9 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
 //= require_tree .
-
 $(function()
 {
 	$('a[rel=tooltip]').tooltip('hide');
 });
+
+
