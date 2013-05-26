@@ -1,7 +1,13 @@
 <div class="page-header">
-  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_priority.edit.btn')}</button>".html_safe, edit_ticket_priority_path(@ticket_priority) %>
+  <% if can? :manage, :all %>
+    <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_priority.edit.btn')}</button>".html_safe, edit_ticket_priority_path(@ticket_priority) %>
+  <% end %>
+
   <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\" style=\"margin-left:10px;\">#{I18n.t(:'ticket_priority.index.btn')}</button>".html_safe, ticket_priorities_path %>
-  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-danger\">#{I18n.t(:'ticket_priority.delete.btn')}</button>".html_safe, @ticket_priority, method: :delete, data: { confirm: I18n.t(:'global.confirm') } %>
+  
+  <% if can? :manage, :all %>
+    <%= link_to "<button class=\"nav nav-pills pull-right btn btn-danger\">#{I18n.t(:'ticket_priority.delete.btn')}</button>".html_safe, @ticket_priority, method: :delete, data: { confirm: I18n.t(:'global.confirm') } %>
+  <% end %>
   <h1><%= I18n.t(:'ticket_priority.show.title') %> <em><%= @ticket_priority.name %></em></h1>
 </div>
 

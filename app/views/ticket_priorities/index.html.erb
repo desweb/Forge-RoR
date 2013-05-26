@@ -1,5 +1,7 @@
 <div class="page-header">
-  <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_priority.new.btn')}</button>".html_safe, new_ticket_priority_path %>
+  <% if can? :manage, :all %>
+    <%= link_to "<button class=\"nav nav-pills pull-right btn btn-primary\">#{I18n.t(:'ticket_priority.new.btn')}</button>".html_safe, new_ticket_priority_path %>
+  <% end %>
   <h1><%= I18n.t(:'ticket_priority.index.title') %></h1>
 </div>
 
@@ -14,8 +16,8 @@
   <tr>
     <td><%= link_to ticket_priority.name, ticket_priority, :rel => 'tooltip', :title => I18n.t(:'ticket_priority.show.btn') %></td>
     <td class="hidden-phone"><%= link_to '<i class="icon-eye-open"></i>'.html_safe, ticket_priority, :rel => 'tooltip', :title => I18n.t(:'ticket_priority.show.btn') %></td>
-    <td class="hidden-phone"><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_ticket_priority_path(ticket_priority), :rel => 'tooltip', :title => I18n.t(:'ticket_priority.edit.btn') %></td>
-    <td class="hidden-phone"><%= link_to '<i class="icon-remove"></i>'.html_safe, ticket_priority, method: :delete, data: { confirm: I18n.t(:'global.confirm') }, :rel => 'tooltip', :title => I18n.t(:'ticket_priority.delete.btn') %></td>
+    <td class="hidden-phone"><% if can? :manage, :all %><%= link_to '<i class="icon-pencil"></i>'.html_safe, edit_ticket_priority_path(ticket_priority), :rel => 'tooltip', :title => I18n.t(:'ticket_priority.edit.btn') %><% end %></td>
+    <td class="hidden-phone"><% if can? :manage, :all %><%= link_to '<i class="icon-remove"></i>'.html_safe, ticket_priority, method: :delete, data: { confirm: I18n.t(:'global.confirm') }, :rel => 'tooltip', :title => I18n.t(:'ticket_priority.delete.btn') %><% end %></td>
   </tr>
 <% end %>
 </table>
