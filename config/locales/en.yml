@@ -48,6 +48,7 @@ en:
     confirm: Are you sur ?
     actions: Actions
     language: Language
+    filter: Filters
   nav:
     project: Projects
     ticket: Tickets

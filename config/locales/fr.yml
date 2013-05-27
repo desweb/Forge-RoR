@@ -46,6 +46,7 @@ fr:
     confirm: Êtes-vous sur ?
     actions: Actions
     language: Langue
+    filter: Filtres
   nav:
     project: Projets
     ticket: Tickets
