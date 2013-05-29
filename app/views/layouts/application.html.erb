@@ -82,7 +82,11 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span10 offset1">
+        <% if user_signed_in? %>
+          <div class="span10 offset1">
+        <% else %>
+          <div class="span4 offset4">
+        <% end %>
           <%= bootstrap_flash %>
           <%= yield %>
         </div>

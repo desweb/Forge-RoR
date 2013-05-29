@@ -4,33 +4,17 @@
 </div>
 
 <div ng-controller="TicketListCtrl">
-    <form class="form-horizontal">
+    <form class="form-inline">
         <fieldset>
           <legend><%= I18n.t(:'global.filter') %> :</legend>
-          <div class="control-group">
             <label class="control-label" for="inputSearchTitle"><%= I18n.t(:'ticket.global.title') %> :</label>
-            <div class="controls">
-              <input type="text" ng-model="search.title" id="inputSearch">
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="selectSearchState"><%= I18n.t(:'ticket.global.state') %> :</label>
-            <div class="controls">
-              <select id="selectSearchState" ng-model="search.ticket_state" ng-options="state for state in tickets_states"><option value="">--</option></select>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="selectSearchType"><%= I18n.t(:'ticket.global.type') %> :</label>
-            <div class="controls">
-              <select id="selectSearchType" ng-model="search.ticket_type" ng-options="type for type in tickets_types"><option value="">--</option></select>
-            </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="selectSearchPriority"> <%= I18n.t(:'ticket.global.priority') %> :</label>
-            <div class="controls">
-              <select id="selectSearchPriority" ng-model="search.ticket_priority" ng-options="priority for priority in tickets_priorities"><option value="">--</option></select><br />
-            </div>
-          </div>
+            <input type="text" ng-model="search.title" id="inputSearch" class="input-small" />
+            <label class="control-label" for="selectSearchState" style="margin-left:10px;"><%= I18n.t(:'ticket.global.state') %> :</label>
+            <select id="selectSearchState" ng-model="search.ticket_state" ng-options="state for state in tickets_states" class="input-small"><option value="">--</option></select>
+            <label class="control-label" for="selectSearchType" style="margin-left:10px;"><%= I18n.t(:'ticket.global.type') %> :</label>
+            <select id="selectSearchType" ng-model="search.ticket_type" ng-options="type for type in tickets_types" class="input-small"><option value="">--</option></select>
+            <label class="control-label" for="selectSearchPriority" style="margin-left:10px;"> <%= I18n.t(:'ticket.global.priority') %> :</label>
+            <select id="selectSearchPriority" ng-model="search.ticket_priority" ng-options="priority for priority in tickets_priorities" class="input-small"><option value="">--</option></select><br />
        </fieldset>
   </form>
 
